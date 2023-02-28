@@ -1,0 +1,127 @@
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+  }
+
+  .hero h1{
+    margin-top: 3em;
+    font-size: 60px;
+    text-transform: uppercase;
+    font-family:'Times New Roman', Times, serif;
+    text-shadow: black;
+    text-shadow: 0 0 20px rgba(2, 2, 2, 2);
+    transition: text-shadow;
+  }
+
+  .center {
+    text-align: center;
+  }
+  
+  .container {
+    display: flex;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    max-height: 200%;
+    max-width: 200%;
+    overflow:hidden;
+  }
+  
+  .container .container1 textarea {
+    width: 450px;
+    height: 200px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+    background-color: #0075b9b3;
+    text-transform: capitalize;
+    color: #fff;
+    resize: none;
+  }
+  
+  .container textarea:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    outline: none;
+  }
+  
+  button {
+    margin: 4em 0 0 2em;
+    font-size: 16px;
+    width: 120px;
+    height: 50px;
+    color: #fff;
+    background-color: #0058af;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0074B9;
+  }
+  
+  .container .result {
+    margin: 0 0 0 2em;
+    font-size: 16px;
+    color: #F1EDFF;
+  }
+  
+  .container .result .Positive {
+    color: rgb(36, 185, 56); 
+    font-size: 30px;
+  }
+
+  .container .result .Neutral {
+    color: rgb(43, 151, 97); 
+    font-size: 30px;
+  }
+
+  .container .result .Negative {
+    color: rgb(171, 38, 17); 
+    font-size: 30px;
+  }
+
+  .container .result h1 {
+    font-size: 60px;
+    margin: 0;
+  }
+
+  .container .result h3 {
+    font-size: 20px;
+    color: #ccc;
+    overflow-wrap: break-word;
+  }
+
+  .container .result .Empty-Error{
+    color: rgb(206, 21, 21);
+    font-size: 30px;
+    margin-top: 3em;
+  }
+
+  .container .container1{
+    display: block;
+    height: 100%;
+    width: 28%;
+    margin-left: 31em;
+  }
+  
+  .container .container1 button{
+    margin-left: 12em;
+    margin-top: 2em;
+  }
+
+  .container .container2{
+
+    height: 100%;
+    width: 30%;
+    
+  }
+  
+  

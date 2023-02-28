@@ -1,0 +1,122 @@
+{% extends 'Base_Layout.html' %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+{% endblock %}
+
+{% block title %}
+  Home - Tweets Sentiment Analysis
+{% endblock %}
+
+<body>
+  
+  {% block elements %}
+    <li><a href="/send">Tweet Analysis</a></li>
+    <li><a href="/fetch">Fetch Tweets</a></li>
+  {% endblock %}
+  
+  
+  {% block content %}
+  <section>
+    <div class="hero">
+      <h1 class="animate__heartBeat">Welcome</h1>
+      <h2><strong>Hate Speech Classification on #WorldCup2022 Tweets</strong></h2>
+      <div class="buttons">
+        <a href="/send" class="button"></a>
+        <a href="/fetch" class="button"></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="team">
+    <div class="bar">
+      <h2>Team Members</h2>
+    </div>
+    <div class="card">
+      <div class="front">
+        <img src="../static/images/team_members/1.jpg" alt="Member 1">
+      </div>
+      <div class="back">
+        <h3>Mohammed Al-Mahameed</h3>
+        <p>Bachelor's degree in Software Engineering<br/>Graduated Student at Jadara University</p>
+        <center style="margin-top: 20%;">
+          <a style="margin-right: 10%;" href="https://www.facebook.com/iMoHd8" target="_blank">
+            <img style="width: 40px; height: 40px; position:sticky;" src="../static/images/icons/facebook.png" alt="">
+          </a>
+
+          <a style="margin-right: 10%;" href="https://www.researchgate.net/profile/Mohammed-Mahameed-2" target="_blank">
+            <img style="width: 40px; height: 40px; position:sticky;" src="../static/images/icons/researchgate.png" alt="">
+          </a>
+          <a href="https://twitter.com/iMoHd_8" target="_blank">
+            <img style="width: 40px; height: 40px; position:sticky;" src="../static/images/icons/twitter.png" alt="">
+          </a>
+        </center>
+      </div>
+    </div>
+    <div class="card">
+      <div class="front">
+        <img src="../static/images/team_members/3.jpg" alt="Member 2">
+      </div>
+      <div class="back">
+        <h3>Dr. Arwa Zabian</h3>
+        <p>ph.d <br/> Professor (Associate) at Jadara University</p>
+        <center style="margin-top: 20%;">
+          <a style="margin-right: 10%;" href="https://www.facebook.com/aroushka.zabian" target="_blank" role="button">
+            <img style="width: 40px; height: 40px; position:static;" src="../static/images/icons/facebook.png" alt="">
+          </a>
+
+          <a style="margin-right: 10%;" href="https://www.researchgate.net/profile/Arwa-Zabian" target="_blank" role="button">
+            <img style="width: 40px; height: 40px; position:static;" src="../static/images/icons/researchgate.png" alt="">
+          </a>
+          <a href="#!" target="_blank" role="button">
+            <img style="width: 40px; height: 40px; position:static;" src="../static/images/icons/twitter.png" alt="">
+          </a>
+        </center>
+      </div>
+    </div>
+    <div class="card">
+      <div class="front">
+        <img src="../static/images/team_members/4.jpg" alt="Member 3">
+      </div>
+      <div class="back">
+        <h3>Mr. Shakir Mrayyen</h3>
+        <p>Master of Science <br/> Faculty Member at Jadara University</p>
+        <center style="margin-top: 20%;">
+            <a style="margin-right: 10%;" href="https://www.facebook.com/mrayyen" target="_blank" role="button">
+                <img style="width: 40px; height: 40px; position:static;" src="../static/images/icons/facebook.png" alt="">
+            </a>
+            <a style="margin-right: 10%;" href="https://www.researchgate.net/profile/Shakir-Mrayyen" target="_blank" role="button">
+                <img style="width: 40px; height: 40px; position:static;" src="../static/images/icons/researchgate.png" alt="">
+            </a>
+            <a href="#!" target="_blank" role="button">
+                <img style="width: 40px; height: 40px; position:static;" src="../static/images/icons/twitter.png" alt="">
+            </a>
+        </center>
+
+      </div>
+    </div>
+    <div class="card">
+      <div class="front">
+        <img src="../static/images/team_members/2.jpg" alt="Member 4">
+      </div>
+      <div class="back">
+        <h3>Mohammed Al-Zoubi</h3>
+        <p>Bachelor's degree in Software Engineering<br/>Graduated Student at Jadara University</p>
+        <center style="margin-top: 20%;">
+          <a style="margin-right: 10%;" href="https://www.facebook.com/mohammed.alzoubi.sy" target="_blank" role="button">
+            <img style="width: 40px; height: 40px; position:static;" src="../static/images/icons/facebook.png" alt="">
+          </a>
+          <a style="margin-right: 10%;" href="#!" target="_blank" role="button">
+            <img style="width: 40px; height: 40px; position:static;" src="../static/images/icons/researchgate.png" alt="">
+          </a>
+          <a href="https://twitter.com/alz3bi_sy" target="_blank" role="button">
+            <img style="width: 40px; height: 40px; position:static;" src="../static/images/icons/twitter.png" alt="">
+          </a>
+        </center>
+      </div>
+    </div>
+  </section>
+  {% endblock %}
+
+</body>
+</html>

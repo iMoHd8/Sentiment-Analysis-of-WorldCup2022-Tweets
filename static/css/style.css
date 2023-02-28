@@ -1,0 +1,189 @@
+  .hero {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+  }
+
+  .hero h1 {
+    margin-top: 5em;
+    font-size: 65px;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: black;
+    text-shadow: 0 0 20px rgba(2, 2, 2, 2);
+    transition: text-shadow;
+  }
+
+  .hero h2 {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(40, 119, 223, 0.672);
+    font-family: cursive;
+    color: #fff;
+    text-align: center;
+    line-height: 100px;
+  }
+
+  @keyframes move {
+    0% {
+      transform: translateX(-33%);
+    }
+    50% {
+      transform: translateX(33%);
+    }
+    100% {
+      transform: translateX(-33%);
+    }
+  }
+
+  .hero h2 strong {
+    text-transform: capitalize;
+    font-size: 35px;
+    display: inline-block;
+    animation: move 15s linear infinite;
+  }
+
+  .buttons {
+    display: flex;
+    margin-top: 20px;
+    padding-top: 5%;
+  }
+
+  .button {
+    display: inline-block;
+    max-width: 100%;
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+  }
+
+  .button:first-child {
+    background-image: url('../images/icons/send_icon.png');
+    margin-right: 20em;
+  }
+
+  .button:last-child {
+    background-image: url('../images/icons/twitter_icon.png');
+  }
+
+  @keyframes cycle {
+    0% {
+      background-image: url('../images/icons/send_icon.png');
+    }
+    50% {
+      background-image: url('../images/icons/send_black_icon.png');
+    }
+    100% {
+      background-image: url('../images/icons/send_icon.png');
+    }
+  }
+
+  .button:first-child:hover {
+    animation: cycle 2s infinite;
+  }
+
+  @keyframes cycle_2 {
+    0% {
+      background-image: url('../images/icons/twitter_icon.png');
+    }
+    50% {
+      background-image: url('../images/icons/twitter_black_icon.png');
+    }
+    100% {
+      background-image: url('../images/icons/twitter_icon.png');
+    }
+  }
+
+  .button:last-child:hover {
+    animation: cycle_2 2s infinite;
+  }
+
+  .team .bar {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(40, 119, 223, 0.672);
+    color: #fff;
+    text-transform: capitalize;
+    text-align: center;
+    line-height: 100px;
+    margin: 20em 0 10em 0;
+  }
+
+  .team .bar h2 {
+    margin: 0;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 9em;
+  }
+
+  .team .card {
+    width: 400px;
+    height: 450px;
+    perspective: 1000px;
+    margin-bottom: 20px;
+    margin-right: 30px;
+  }
+
+  .team .card .front,
+  .team .card .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+  }
+
+  .team .card .front {
+    transform: rotateY(0deg);
+  }
+
+  .team .card .back {
+    transform: rotateY(180deg);
+    background-color: rgb(23, 61, 108);
+  }
+
+  .team .card:hover .front {
+    transform: rotateY(-180deg);
+  }
+
+  .team .card:hover .back {
+    transform: rotateY(0deg);
+  }
+
+  .team .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .team .card h3 {
+    margin: 0;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(126, 126, 126);
+  }
+
+  .team .card p {
+    margin: 0;
+    padding: 0 20px 20px;
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.5;
+  }

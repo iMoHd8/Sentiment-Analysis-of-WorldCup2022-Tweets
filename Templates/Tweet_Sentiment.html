@@ -1,0 +1,128 @@
+{% extends 'Base_Layout.html' %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="../static/css/Sentiment_style.css">
+{% endblock %}
+
+{% block title %}
+  Tweet Analysis - Tweets Sentiment Analysis
+{% endblock %}
+
+<body>
+
+    {% block elements %}
+        <li><a href="/">Home</a></li>
+        <li><a href="/fetch">Fetch Tweets</a></li>
+    {% endblock %}
+
+    {% block content %}
+    <section>
+        <div class="hero">
+          <h1 class="animate__heartBeat">Tweets Sentiment Analysis</h1>
+        </div>
+        
+        <form class="form" method="POST">
+            {% csrf_token %}
+            <div class="container">
+                <div class="container1">
+                    <textarea name="tweet_text" class="tweet"></textarea>
+
+                    <button type="submit" id="" onclick="">Analyse</button>
+                </div>
+
+                <div class="result">
+                    {% if content == '' %}
+                        <h3 class="Empty-Error">Please Enter Any Tweet For Analyse it</h3>
+                    {% else %}
+                    {% if sentiment == 'positive' %}
+                        <h3>The Tweet: <br> {{content}}</h3>
+                        <h2 class="Positive">{{sentiment}}</h2>
+                        <picture>
+                            <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f600/512.webp" type="image/webp">
+                            <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f600/512.gif" alt="😀" width="64" height="64">
+                        </picture>
+                        <br/>
+                        <br/>
+
+                            Positive <progress id="progressBar" style="background-color: rgb(13, 153, 25);" value="0" max="100"></progress> {{positive_per}} %<br/>
+                            Neutral <progress id="progressBar1" style="background-color: grey;" value="0" max="100"></progress> {{neutral_per}}%<br/>
+                            Negative <progress id="progressBar2" style="background-color: rgb(163, 19, 19);" value="0" max="100"></progress> {{negative_per}}%
+
+                    {% elif sentiment == 'negative' %}
+                        <h3>The Tweet: <br> {{content}}</h3>
+                        <h2 class="Negative">{{sentiment}}</h2>
+                        <picture>
+                            <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f61e/512.webp" type="image/webp">
+                            <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f61e/512.gif" alt="😞" width="64" height="64">
+                        </picture>
+                        <br/>
+                        <br/>
+
+                            Positive <progress id="progressBar" style="background-color: rgb(13, 153, 25);" value="0" max="100"></progress> {{positive_per}} %<br/>
+                            Neutral <progress id="progressBar1" style="background-color: grey;" value="0" max="100"></progress> {{neutral_per}}%<br/>
+                            Negative <progress id="progressBar2" style="background-color: rgb(163, 19, 19);" value="0" max="100"></progress> {{negative_per}}%
+
+                    {% elif sentiment == 'neutral' %}
+                        <h3>The Tweet: <br> {{content}}</h3>
+                        <h2 class="Neutral">{{sentiment}}</h2>
+                        <picture>
+                            <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f610/512.webp" type="image/webp">
+                            <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f610/512.gif" alt="😐" width="64" height="64">
+                        </picture>
+                        <br/>
+                        <br/>
+
+                            Positive <progress id="progressBar" style="background-color: rgb(13, 153, 25);" value="0" max="100"></progress> {{positive_per}} %<br/>
+                            Neutral <progress id="progressBar1" style="background-color: grey;" value="0" max="100"></progress> {{neutral_per}}%<br/>
+                            Negative <progress id="progressBar2" style="background-color: rgb(163, 19, 19);" value="0" max="100"></progress> {{negative_per}}%
+
+                    {% endif %}
+                    {% endif%}
+                    
+                </div>
+            </div>
+
+        </form>
+
+        
+
+    </section>
+
+    <script>
+        var progressBar = document.getElementById("progressBar");
+        var progressBar1 = document.getElementById("progressBar1");
+        var progressBar2 = document.getElementById("progressBar2");
+
+        var positive_per = {{positive_per}};
+        var neutral_per = {{neutral_per}};
+        var negative_per = {{negative_per}};
+
+        function updateProgressBar() {
+            if (progressBar.value < positive_per) {
+                progressBar.value++;
+                setTimeout(updateProgressBar, 85);
+            }
+
+            if (progressBar1.value < neutral_per) {
+                progressBar1.value++;
+                setTimeout(updateProgressBar, 85);
+            }
+
+            if (progressBar2.value < negative_per) {
+                progressBar2.value++;
+                setTimeout(updateProgressBar, 85);
+            }
+
+        }
+
+        updateProgressBar();
+    </script>
+
+    {% endblock %}
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    {% block style %}
+    {% endblock %}
+    <link rel="stylesheet" type="text/css" href="../static/css/Header.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/images/icons/sentiment-analysis-icon-png.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://fonts.gstatic.com/s/e/notoemoji/latest/1f610/lottie.json"/>
+    
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+
+</head>
+
+
+<body>
+
+    <header>
+        <nav>
+          <div class="logo">
+              <a href="/"><img src="../static/images/icons/sentiment-analysis-icon-png.png" alt="My Logo"></a>
+          </div>
+          <ul>
+            {% block elements %}
+
+            {% endblock %}
+          </ul>
+        </nav>
+      </header>
+
+      {% block content %}
+
+      {% endblock %}
+
+      <tbody>
+
+      </tbody>
+      
+    </body>
+
+</html>

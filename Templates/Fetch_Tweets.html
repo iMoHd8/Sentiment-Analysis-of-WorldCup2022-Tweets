@@ -1,0 +1,92 @@
+{% extends 'Base_Layout.html' %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="../static/css/fetch_style.css">
+{% endblock %}
+
+{% block title %}
+  Fetch Tweets - Tweets Sentiment Analysis
+{% endblock %}
+
+<body>
+    
+    {% block elements %}
+        <li><a href="/">Home</a></li>
+        <li><a href="/send">Tweet Analysis</a></li>
+    {% endblock %}
+
+    {% block content %}
+    <section>
+        <div class="hero">
+          <h1 class="animate__heartBeat">Tweets Sentiment Analysis</h1>
+        </div>
+        
+        <form method="POST">
+            {% csrf_token %}
+            <div class="search-box">
+                <button class="btn-search" type="submit">
+                    <i class="fas fa-search">
+                        <img src="../static/images/icons/search_icon.png" alt="">
+                    </i>
+                </button>
+                <input type="text" autofocus required name="ID" class="input-search" placeholder="Type @... OR #...">
+            </div>
+        </form>
+        <h5 id="Loading">
+            <script>fn()</script>
+        </h5>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="table-responsive">
+                <table class="table align-middle table-bordered table-striped-columns table-hover">
+                    <tbody>
+                        {% if request.method == 'POST'%}
+                            
+                            <thead>
+                                <tr>
+                                    <th><h5 style="color:white; font-weight: 500;">Tweet</h5></th>
+                                    <th><h5 style="color:white; font-weight: 500;">Sentiment</h5></th>
+                                    <th><h5 style="color:white; font-weight: 500;">Emoji</h5></th>
+                                </tr>
+                            </thead>
+                        {% endif %}
+                        {% for i,j in tweets %}
+                            <tr class="content">
+                                <td>{{i}}</td>
+                                <td class="sentiment">{{j}}</td>
+
+                                {% if j == 'Positive' %}
+                                    <td class="sentiment">
+                                        <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f600/512.gif" alt="😀" width="64" height="64">
+                                    </td>
+                                {% elif j == 'Negative' %}
+                                    <td class="sentiment">
+                                        <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2639_fe0f/512.gif" alt="☹" width="64" height="64">
+                                    </td>
+                                {% elif j == 'Neutral' %}
+                                    <td class="sentiment">
+                                        <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f610/512.gif" alt="😐" width="64" height="64">
+                                    </td>
+                                {% endif %}
+                            </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function fn()
+        {
+            document.getElementById("Loading").innerText = "Please Wait";
+        }
+    </script>
+    {% endblock %}
+</body>
+
+</html>
