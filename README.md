@@ -15,4 +15,4 @@ and eventually we have developed a website for displaying the results using Djan
 surely i didn't talk about all our works, but believe me we faced many problems that we used all of our knowledge to fix them.
 Eventually this was a graduation project that we have put all our efforts on it. and This is our project in a nutshell.
 
-thank for your time :)
+thanks for your time :)
